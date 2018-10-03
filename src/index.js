@@ -1,5 +1,7 @@
-module.exports = {
-	get default() {
-		return this;
-	}
-};
+module.exports = Object.assign(
+	{
+		default: require("./palebath"),
+		util: require("./util")
+	},
+	require("./palebath")
+);
