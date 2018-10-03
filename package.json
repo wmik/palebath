@@ -1,0 +1,67 @@
+{
+  "name": "palebath",
+  "version": "0.0.0-development",
+  "description": "A tiny utility tool that generates character information from the English alphabet",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "xo && nyc ava",
+    "coverage:report": "nyc report > .nyc_output/coverage.lcov && codecov",
+    "coverage:check": "nyc check-coverage",
+    "precommit": "npm test",
+    "commit": "git-cz",
+    "semantic-release": "semantic-release",
+    "travis-deploy-once": "travis-deploy-once --pro"
+  },
+  "author": "wmik <contact@wmik.me>",
+  "keywords": [
+    "character",
+    "information",
+    "English",
+    "alphabet",
+    "letter"
+  ],
+  "license": "MIT",
+  "files": [
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wmik/palebath.git"
+  },
+  "bugs": "https://github.com/wmik/palebath/issues",
+  "xo": {
+    "extends": "xo-wmik"
+  },
+  "ava": {
+    "require": [
+      "requirable"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  },
+  "nyc": {
+    "lines": 75,
+    "functions": 75,
+    "branches": 75,
+    "reporter": [
+      "text-lcov"
+    ]
+  },
+  "devDependencies": {
+    "ava": "^0.25.0",
+    "codecov": "^3.0.4",
+    "commitizen": "^2.10.1",
+    "cz-conventional-changelog": "^2.1.0",
+    "eslint-config-xo-wmik": "0.0.0",
+    "husky": "^0.14.3",
+    "nyc": "^13.0.1",
+    "requirable": "^1.0.5",
+    "semantic-release": "^15.9.16",
+    "this": "^1.0.2",
+    "xo": "^0.22.0",
+    "travis-deploy-once": "^5.0.9"
+  }
+}

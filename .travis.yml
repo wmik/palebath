@@ -1,0 +1,22 @@
+sudo: false
+language: node_js
+node_js:
+  - "8"
+  - "6"
+cache:
+  directories:
+    - node_modules
+notifications:
+  email: false
+script:
+  - npm test
+  - npm run coverage:check
+after_success:
+  - npm run coverage:report
+deploy:
+  provider: script
+  script: npm run semantic-release
+  skip_cleanup: true
+  file: dist/**/*
+  on:
+    branch: master
